@@ -5,13 +5,10 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-// const authorRoutes = require('./routes/authors');
-
-
+const authorRoutes = require('./routes/authors');
 const postRoutes = require('./routes/posts')
 
-// server.use('/authors', authorRoutes);
-
+server.use('/authors', authorRoutes);
 server.use('/posts', postRoutes)
 
 const port = process.env.PORT || 3000;
