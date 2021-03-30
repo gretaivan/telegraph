@@ -11,6 +11,22 @@ async function all(req,res) {
     }
 }
 //byId
+async function byId(req, res){
+    try{
+        const post = await Post.findById(req.params.id); 
+        res.status(200).json(post); 
+    }catch(err){
+        res.status(404).json({err})
+    }
+}
 //create
+async function create (req, res) {
+    try {
+        const post = await Post.create(req.body);
+        res.status(201).json(post)
+    } catch (err) {
+        res.status(422).json({err})
+    }
+}
 
-module.exports = { all };
+module.exports = { all, byId, create };
