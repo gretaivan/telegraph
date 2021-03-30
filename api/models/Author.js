@@ -23,7 +23,7 @@ class Author {
     static findById(id) {
         return new Promise(async (resolve, reject) => {
             try {
-                const authorsData = await db.query(`SELECT * from authors WHERE id = $1;`, [ id ]);
+                const authorsData = await db.query(`SELECT * from authors WHERE id = $1;`, [id]);
                 const authors = new Author(authorsData.rows[0]);
                 resolve(authors);
             } catch (err) {
