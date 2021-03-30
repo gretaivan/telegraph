@@ -1,4 +1,4 @@
-INSERT INTO owners (name, address) 
+INSERT INTO authors (name) 
 VALUES
     ('Beth', 'South Pavillion' ),
     ('Naz', '1 The Strand' );

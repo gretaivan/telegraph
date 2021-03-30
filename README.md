@@ -1,6 +1,6 @@
 # TELEGRAPH API
 
-description here 
+An app to post the posts with pseudonym, title and body. All entries stored in postgres database and can be consumed through API. 
 
 ## Installation & Usage 
 
