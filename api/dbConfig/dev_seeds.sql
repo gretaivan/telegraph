@@ -1,13 +1,9 @@
 INSERT INTO authors (name) 
 VALUES
-    ('Beth', 'South Pavillion' ),
-    ('Naz', '1 The Strand' );
+    ('Natalie'),
+    ('Greta');
 
-INSERT INTO dogs (name, age, owner_id) 
+INSERT INTO posts (title, description, author_id) 
 VALUES
-    ('Snoopy', 5, 1 ),
-    ('Mochi', 3, 2 ),
-    ('Masha', 5, 1 ),
-    ('Hendon', 2, 2 ),
-    ('Zola', 13, 1 ),
-    ('Snip', 3, 2);
+    ('Hello World!', 'This is my very first post', 1 ),
+    ('Moody days', 'Just because it is sunny and you cannot be outside...', 2);
