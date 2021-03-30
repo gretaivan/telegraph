@@ -5,15 +5,15 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-const dogRoutes = require('./routes/dogs')
-const ownerRoutes = require('./routes/owners')
+const authorRoutes = require('./routes/authors');
+const postRoutes = require('./routes/posts')
 
-server.use('/dogs', dogRoutes)
-server.use('/owners', ownerRoutes)
+server.use('/authors', authorRoutes);
+server.use('/posts', postRoutes)
 
 const port = process.env.PORT || 3000;
 
 // Root route
-server.get('/', (req, res) => res.send('Hello, world!'))
+server.get('/', (req, res) => res.send('Welcome to Telegraph API'))
 
 module.exports = server
