@@ -12,9 +12,14 @@ class Post {
 
     static get all(){
         return new Promise (async (resolve, reject) => {
-            let postData = await db.query('SELECT * FROM posts'); 
-            let posts  = postData.rows.map(p => new Post(p)); 
-
+            try{
+                let postData = await db.query('SELECT * FROM posts'); 
+                let posts  = postData.rows.map(p => new Post(p)); 
+                console.log(posts)
+                resolve(posts);
+            } catch(err){
+                reject('Could not find any posts')
+            }
         })
 
     }
