@@ -22,6 +22,14 @@ An app to post the posts with pseudonym, title and body. All entries stored in p
 ## License 
 
 ## Process 
+### db\migrations 
++ Created database schema
+
+### dbCongfig file
++ Setting up  the DB configuration files 
++ Seeding in some data to the DB to start dev process
+
+
 
 ## Bugs
 
