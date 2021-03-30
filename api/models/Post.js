@@ -7,7 +7,7 @@ class Post {
         this.title = data.title
         this.description = data.description
         //???? 
-        this.author_name = { name: data.author_name, path: `/authors/${data.authors_id}`}
+        this.author_name = { name: data.author_name, path: `/authors/${data.author_id}`}
     }
 
     static get all(){
@@ -15,7 +15,6 @@ class Post {
             try{
                 let postData = await db.query('SELECT * FROM posts'); 
                 let posts  = postData.rows.map(p => new Post(p)); 
-                console.log(posts)
                 resolve(posts);
             } catch(err){
                 reject('Could not find any posts')
@@ -27,8 +26,12 @@ class Post {
     static findById(id){
         return new Promise(async (resolve, reject) =>{
             try{
-                let postData = db.query('SELECT * posts.*, authors.name AS author_name FROM posts JOIN authors ON posts.author_id = authors.id WHERE posts.id = $1;', [id]);
+                console.log("i am searching the index with: " + id)
+                
+                let postData = await db.query('SELECT posts.*, authors.name AS author_name FROM posts JOIN authors ON posts.author_id = authors.id WHERE posts.id = $1;', [id]);
+                console.log(postData.author_id)
                 let post = new Post(postData.rows[0]); 
+                console.log(post)
                 resolve(post);
             }catch(err){
                 reject('Post does not exist'); 

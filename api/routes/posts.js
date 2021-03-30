@@ -8,9 +8,9 @@ const Post = require('../models/Post');
 router.get('/', postsControl.all);
 
 //get by id
-//router.get('/:id', postsControl.byId); 
+router.get('/:id', postsControl.byId); 
 //create ne post
-//router.post('/', postsControl.create); 
+router.post('/', postsControl.create); 
 
 
 module.exports = router; 
