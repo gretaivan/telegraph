@@ -42,6 +42,10 @@ An app to post the posts with pseudonym, title and body. All entries stored in p
 6. Addition of the route files for both post and author
 7. Creation of controllers for author and post routes. Functionality:  get all, find by index for both objects and create post
 
+### Client 
+8. Creation of client side skeleton
+9. Establishes connection between server and client
+
 
 
 ## Bugs

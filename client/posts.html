@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/post.css">
+    <!-- <script src="./static/js/index.js" defer></script> -->
+    <script defer src="bundle.js"></script>
+    <title>Telegram</title>
+</head>
+
+<body>
+    <div id="hello"></div>
+
+    <section>
+        <form>
+            <label for="title">Title: </label>
+            <input type="text" id="title" autocomplete="off" autofocus="on" /><br>
+            <label for="name">Name: </label>
+            <input type="text" id="name" value="Anonymous" /><br>
+            <label for="story">Your story: </label>
+            <input type="text" id="story" maxlength="600" />
+            <input type="submit" id="submit-btn" value="Post" />
+        </form>
+    </section>
+
+
+    <h1>Post area </h1>
+    <div id="result">
+    
+    </div>
+</body>
+
+</html>

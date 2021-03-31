@@ -1,30 +1,30 @@
 const Author = require('../models/Author');
 
 
-async function create (req, res) {
+async function create(req, res) {
     try {
-        const author = await Author.create(req.body);
+        const author = await Author.create(req.body.name);
         res.status(201).json(author)
     } catch (err) {
-        res.status(422).json({err})
+        res.status(422).json({ err })
     }
 }
 
-async function index (req, res) {
+async function index(req, res) {
     try {
         const authors = await Author.all;
         res.status(200).json(authors)
     } catch (err) {
-        res.status(500).json({err})
+        res.status(500).json({ err })
     }
 }
 
-async function show (req, res) {
+async function show(req, res) {
     try {
         const authors = await Author.findById(req.params.id);
         res.status(200).json(authors)
     } catch (err) {
-        res.status(404).json({err})
+        res.status(404).json({ err })
     }
 }
 
