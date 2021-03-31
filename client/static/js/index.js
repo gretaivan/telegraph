@@ -8,7 +8,6 @@ function getHello(){
 }
 
 function appendHello(data){
-    console.log("I am trying to append")
     let parag = document.createElement('P'); 
     parag.textContent = data; 
     helloDiv.appendChild(parag);
