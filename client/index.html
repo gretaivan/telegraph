@@ -15,13 +15,17 @@
     <h1>Post area </h1>
     <div id="hello"></div>
 
-
-    <form> 
-        <label for="title">Title: </label><input type="text" id="title" autocomplete="off" autofocus="on"/>
-        <label for="name">Name: </label><input type="text" id="name" />
-        <label for="story">Your story: </label><input type="text" id="story"/>
-        <input type="submit" id="submit-btn" value="Post" />
-    </form>
+    <section>
+        <form>
+            <label for="title">Title: </label>
+            <input type="text" id="title" autocomplete="off" autofocus="on" /><br>
+            <label for="name">Name: </label>
+            <input type="text" id="name" value="Anonymous" /><br>
+            <label for="story">Your story: </label>
+            <input type="text" id="story" maxlength="600" />
+            <input type="submit" id="submit-btn" value="Post" />
+        </form>
+    </section>
 </body>
 
 </html>
