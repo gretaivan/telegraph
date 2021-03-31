@@ -31,6 +31,19 @@ class Author {
             }
         });
     }
+
+    static create(name) {
+        return new Promise(async (res, rej) => {
+            try {
+                let result = await db.query(`INSERT INTO authors (name)
+                                                VALUES ($1) RETURNING *;`, [ name ]);
+                let author = new Author(result.rows[0]);
+                res(author)
+            } catch (err) {
+                rej(`Error creating Author: ${err}`)
+            }
+        })
+    }
 }
 
 module.exports = Author;

@@ -3,7 +3,7 @@ const Author = require('../models/Author');
 
 async function create(req, res) {
     try {
-        const author = await Author.create(req.body);
+        const author = await Author.create(req.body.name);
         res.status(201).json(author)
     } catch (err) {
         res.status(422).json({ err })
