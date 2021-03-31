@@ -18,14 +18,16 @@ async function submitPost (e) {
     
     e.preventDefault()
  
-    let post = createPost(); 
+    let postData = createPost(); 
     //also get it back 
     //redirect to post.html 
     //append it 
+    console.log("post data")
+    console.log(postData)
 
-    let response = await sendData(`${server}/posts`, postData);
-
-    console.log(response)
+    let response = await sendData(`${server}posts`, postData);
+    let getResponse = await getData(`${server}posts/`) 
+    console.log(getResponse)
 
 
 }
@@ -52,11 +54,32 @@ async function sendData(url, data = {}){
         },
         body: JSON.stringify(data)
     };
-    fetch(url, options)
-    .then(r => r.json())
-    .catch(console.warn)
+
+    console.log("posting")
+    // const response = await fetch()
+    try{
+        const response = await fetch(url, options)
+        console.log(response);
+        return response;
+    } catch(err){console.log(err)} 
+  
+    // fetch(url, options)
+    // .then(r => {console.log(r)})
+    // .catch(console.warn)
  
 }
+
+async function getData(url){
+    const options = {
+        method: 'GET', 
+        headers: {
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(data)
+    };
+
+    const respose = await fetch(url, options);
+} 
 
 
 module.exports = {getHello, submitPost}
