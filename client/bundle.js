@@ -18,19 +18,19 @@ function appendHello(data){
 async function submitPost (e) {
     
     e.preventDefault()
- 
+   
+    
     let postData = createPost(); 
-    //also get it back 
-    //redirect to post.html 
-    //append it 
-    console.log("post data")
-    console.log(postData)
-
+    
     let response = await sendData(`${server}posts`, postData);
-    let getResponse = await getData(`${server}posts/`) 
-    console.log(getResponse)
-
-
+    
+    const data = await response.json()
+    
+    // window.location.replace(`/posts`); //${response.author_name[path]}
+    //let getResponse = await getData(`${server}posts`)
+  //  console.log(getResponse)
+    // location.replace("./posts.html");
+    appendToView(data);
 }
 
 function createPost(){
@@ -60,6 +60,7 @@ async function sendData(url, data = {}){
     // const response = await fetch()
     try{
         const response = await fetch(url, options)
+        console.log("Response to the client")
         console.log(response);
         return response;
     } catch(err){console.log(err)} 
@@ -76,11 +77,38 @@ async function getData(url){
         headers: {
             'Content-Type': 'application/json', 
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify()
     };
 
     const respose = await fetch(url, options);
 } 
+
+function appendToView(data){
+
+    // const title = data.title; 
+    // const name = data.author_name;
+    // const story = data.description; 
+
+    let resultDiv = document.createElement('div'); 
+
+    let header = document.createElement('h2'); 
+    header.textContent = data.title; 
+     
+    let nameSlot = document.createElement('h3'); 
+    nameSlot.textContent = data.author_name[name]; 
+     
+    let storySlot = document.createElement('p'); 
+    storySlot.textContent = data.description; 
+    
+    
+    
+    resultDiv.appendChild(header);
+    resultDiv.appendChild(nameSlot);
+    resultDiv.appendChild(storySlot);
+
+    let resultSect = document.getElementById('result'); 
+    resultSect.appendChild(resultDiv);
+}
 
 
 module.exports = {getHello, submitPost}
@@ -88,12 +116,12 @@ module.exports = {getHello, submitPost}
 const {submitPost, getHello} = require('./helpers');
 
 const submitBtn = document.getElementById("submit-btn"); 
-console.log(submitBtn)
+// console.log(submitBtn)
 
 
 submitBtn.addEventListener('click', submitPost)
 
-getHello(); 
+// getHello(); 
 
 
 },{"./helpers":1}]},{},[2]);
