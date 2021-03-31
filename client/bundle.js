@@ -95,7 +95,7 @@ function appendToView(data){
     header.textContent = data.title; 
      
     let nameSlot = document.createElement('h3'); 
-    nameSlot.textContent = data.author_name[name]; 
+    nameSlot.textContent = data.author_name.name; 
      
     let storySlot = document.createElement('p'); 
     storySlot.textContent = data.description; 
