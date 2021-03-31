@@ -22,8 +22,12 @@ async function byId(req, res){
 //create
 async function create (req, res) {
     try {
-        const post = await Post.create(req.body);
-        res.status(201).json(post)
+        
+        let post = await Post.create(req.body);
+        // post = JSON.stringify(post)
+        console.log("server response") 
+        console.log(post)
+        res.status(201).send(post)
     } catch (err) {
         res.status(422).json({err})
     }
