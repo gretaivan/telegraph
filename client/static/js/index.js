@@ -1,16 +1,10 @@
-let helloDiv = document.getElementById('hello'); 
+const {submitPost, getHello} = require('./helpers');
 
-function getHello(){
-    fetch('http://localhost:3000/')
-        .then(r => r.text())
-        .then(appendHello)
-        .catch(console.warn)
-}
+const submitBtn = document.getElementById("submit-btn"); 
+console.log(submitBtn)
 
-function appendHello(data){
-    let parag = document.createElement('P'); 
-    parag.textContent = data; 
-    helloDiv.appendChild(parag);
-} 
 
-getHello();
+submitBtn.addEventListener('click', submitPost)
+
+getHello(); 
+
