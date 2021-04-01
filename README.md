@@ -39,7 +39,7 @@ Inspired by the minimalistic design of [Telegraph](https://telegra.ph/), this ap
 2. Setting up the DB configuration files 
 3. Seeding in some data to the DB to start dev process
 
-## Server functionality
+### Server functionality
 4. Implementation of author and posts models 
 5. Set up the server file
 6. Addition of the route files for both post and author
@@ -50,7 +50,7 @@ Inspired by the minimalistic design of [Telegraph](https://telegra.ph/), this ap
 9. Establishes connection between server and client
 10. Add styling  
 
-### Task Requirements
+## Task Requirements
 - [x] The app should have a browser client allowing users to write a post with a title, a pseudonym and a body
 - [x] No login should be required to create a post or visit a post
 - [ ] When a user hits 'publish', the post should be stored in a database and the client redirected to a show path
